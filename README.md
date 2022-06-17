@@ -2,7 +2,7 @@
 
 **Flixter** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **15** hours spent in total
+Time spent: **~15** hours spent in total
 
 ## User Stories
 
@@ -48,7 +48,7 @@ GIF created with [Kap](https://getkap.co/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-- The overview label on the details view controller either continues past the screen (does not wrap) or centers inside the label area (the demo in the spec shows it at the top).
+- On the details view controller, the overview label either continues past the screen (does not wrap) or centers inside the label area rather than aligning at the top.
 
 ## Credits
 
