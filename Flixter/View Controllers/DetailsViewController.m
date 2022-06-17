@@ -7,6 +7,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 
@@ -20,6 +21,7 @@
 @implementation DetailsViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
@@ -39,6 +41,12 @@
     
     [self.backdropView setImageWithURL:backdropURL];
     [self.posterView setImageWithURL:posterURL];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TrailerViewController *trailerVC = [segue destinationViewController];
+    trailerVC.trailerDict = self.detailsDict;
 }
 
 @end
