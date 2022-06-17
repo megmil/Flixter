@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0466448B285A9CEB00BDF8CD /* MovieGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466448A285A9CEB00BDF8CD /* MovieGridCell.m */; };
+		0466448E285AA3DC00BDF8CD /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466448D285AA3DC00BDF8CD /* GridViewController.m */; };
+		046644DB285C3BEE00BDF8CD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046644D9285C3BEE00BDF8CD /* SceneDelegate.m */; };
 		0484726C285A566A00529561 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484726B285A566A00529561 /* MovieViewController.m */; };
 		04847271285A75F600529561 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04847270285A75F600529561 /* MovieCell.m */; };
+		04847274285A85F900529561 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04847273285A85F900529561 /* DetailsViewController.m */; };
 		04A72672285A4D7A0045CA7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A72671285A4D7A0045CA7D /* AppDelegate.m */; };
-		04A72675285A4D7A0045CA7D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A72674285A4D7A0045CA7D /* SceneDelegate.m */; };
-		04A72678285A4D7A0045CA7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A72677285A4D7A0045CA7D /* ViewController.m */; };
 		04A7267B285A4D7A0045CA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A72679285A4D7A0045CA7D /* Main.storyboard */; };
 		04A7267D285A4D7B0045CA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A7267C285A4D7B0045CA7D /* Assets.xcassets */; };
 		04A72680285A4D7B0045CA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A7267E285A4D7B0045CA7D /* LaunchScreen.storyboard */; };
@@ -42,17 +44,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04664489285A9CEB00BDF8CD /* MovieGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieGridCell.h; sourceTree = "<group>"; };
+		0466448A285A9CEB00BDF8CD /* MovieGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieGridCell.m; sourceTree = "<group>"; };
+		0466448C285AA3DC00BDF8CD /* GridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		0466448D285AA3DC00BDF8CD /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		046644D9285C3BEE00BDF8CD /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneDelegate.m; path = ../../../../.Trash/SceneDelegate.m; sourceTree = "<group>"; };
+		046644DA285C3BEE00BDF8CD /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = ../../../../.Trash/SceneDelegate.h; sourceTree = "<group>"; };
 		0484726A285A566A00529561 /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		0484726B285A566A00529561 /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		0484726F285A75F600529561 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		04847270285A75F600529561 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		04847272285A85F900529561 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		04847273285A85F900529561 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		04A7266D285A4D7A0045CA7D /* Flixter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A72670285A4D7A0045CA7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04A72671285A4D7A0045CA7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04A72673285A4D7A0045CA7D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		04A72674285A4D7A0045CA7D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		04A72676285A4D7A0045CA7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04A72677285A4D7A0045CA7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04A7267A285A4D7A0045CA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04A7267C285A4D7B0045CA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A7267F285A4D7B0045CA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,11 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046644D8285BC4D600BDF8CD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04A72679285A4D7A0045CA7D /* Main.storyboard */,
+				04A7267E285A4D7B0045CA7D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		0484726D285A75A500529561 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0484726A285A566A00529561 /* MovieViewController.h */,
 				0484726B285A566A00529561 /* MovieViewController.m */,
+				04847272285A85F900529561 /* DetailsViewController.h */,
+				04847273285A85F900529561 /* DetailsViewController.m */,
+				0466448C285AA3DC00BDF8CD /* GridViewController.h */,
+				0466448D285AA3DC00BDF8CD /* GridViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -114,12 +133,12 @@
 		0484726E285A75B200529561 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04A72673285A4D7A0045CA7D /* SceneDelegate.h */,
-				04A72674285A4D7A0045CA7D /* SceneDelegate.m */,
-				04A72676285A4D7A0045CA7D /* ViewController.h */,
-				04A72677285A4D7A0045CA7D /* ViewController.m */,
+				046644DA285C3BEE00BDF8CD /* SceneDelegate.h */,
+				046644D9285C3BEE00BDF8CD /* SceneDelegate.m */,
 				0484726F285A75F600529561 /* MovieCell.h */,
 				04847270285A75F600529561 /* MovieCell.m */,
+				04664489285A9CEB00BDF8CD /* MovieGridCell.h */,
+				0466448A285A9CEB00BDF8CD /* MovieGridCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,10 +171,9 @@
 				04A72670285A4D7A0045CA7D /* AppDelegate.h */,
 				04A72671285A4D7A0045CA7D /* AppDelegate.m */,
 				0484726E285A75B200529561 /* Views */,
-				04A72679285A4D7A0045CA7D /* Main.storyboard */,
+				046644D8285BC4D600BDF8CD /* Storyboards */,
 				0484726D285A75A500529561 /* View Controllers */,
 				04A7267C285A4D7B0045CA7D /* Assets.xcassets */,
-				04A7267E285A4D7B0045CA7D /* LaunchScreen.storyboard */,
 				04A72681285A4D7B0045CA7D /* Info.plist */,
 				04A72682285A4D7B0045CA7D /* main.m */,
 			);
@@ -440,12 +458,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A72678285A4D7A0045CA7D /* ViewController.m in Sources */,
+				0466448E285AA3DC00BDF8CD /* GridViewController.m in Sources */,
 				0484726C285A566A00529561 /* MovieViewController.m in Sources */,
 				04847271285A75F600529561 /* MovieCell.m in Sources */,
+				046644DB285C3BEE00BDF8CD /* SceneDelegate.m in Sources */,
 				04A72672285A4D7A0045CA7D /* AppDelegate.m in Sources */,
+				04847274285A85F900529561 /* DetailsViewController.m in Sources */,
+				0466448B285A9CEB00BDF8CD /* MovieGridCell.m in Sources */,
 				04A72683285A4D7B0045CA7D /* main.m in Sources */,
-				04A72675285A4D7A0045CA7D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

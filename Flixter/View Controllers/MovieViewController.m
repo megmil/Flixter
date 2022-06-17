@@ -8,49 +8,70 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
+#include "DetailsViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
 @implementation MovieViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    // Do any additional setup after loading the view.ß
+    [self fetchMovies];
+    [self.activityIndicator startAnimating];
     
+    // configure "pull to refresh" feature
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+// MODIFIES: movies, tableView
+// EFFECTS: Requests data from movie database. If there is a network error, presents an alert. Else, stores the movie data then reloads the table.
+- (void)fetchMovies {
+    
+    // request data from movie database
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a1d98e6dbbd7806ea51d26fdad046f7e"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
-           }
-           else {
-               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               
-               self.movies = dataDictionary[@"results"];
-               
-               [self.tableView reloadData];
-               
-               /*
-                for (NSDictionary *movie in movies) {
-                    NSLog(@"Movie: %@", movie);
-                }
-                */
-
-               // TODO: Get the array of movies
-               // TODO: Store the movies in a property to use elsewhere
-               // TODO: Reload your table view data
-           }
-       }];
+        if (error != nil) {
+            // create alert
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies"
+                                                                              message:@"The Internet connection appears to be offline."
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+            
+            // add "try again" action
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"Try Again"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:nil];
+            [alert addAction:action];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            // update movie data
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.movies = dataDictionary[@"results"];
+            
+            [self.tableView reloadData];
+        }
+        
+        [self.refreshControl endRefreshing];
+        [self.activityIndicator stopAnimating];
+    }];
+    
     [task resume];
 }
 
@@ -58,32 +79,36 @@
     return self.movies.count;
 }
 
+// EFFECTS: Returns the reusable MovieCell with the title, overview, and poster view for row at index path.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
     NSDictionary *movie = self.movies[indexPath.row];
-    cell.movieTitle.text = movie[@"title"];
-    cell.movieDetails.text = movie[@"overview"];
+    cell.movieCellTitle.text = movie[@"title"];
+    cell.movieCellOverview.text = movie[@"overview"];
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [cell.movieImage setImageWithURL:posterURL];
+    [cell.movieCellPosterView setImageWithURL:posterURL];
     
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// MODIFIES: detailsDict
+// EFFECTS: Passes movie data from sender (MovieCell) to DetailsViewController.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NSIndexPath *myIndexPath = [self.tableView indexPathForCell:sender];
+    
+    NSDictionary *dataToPass = self.movies[myIndexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.detailsDict = dataToPass;
 }
-*/
 
 @end
