@@ -49,6 +49,7 @@ GIF created with [Kap](https://getkap.co/).
 
 Describe any challenges encountered while building the app.
 - On the details view controller, the overview label either continues past the screen (does not wrap) or centers inside the label area rather than aligning at the top.
+- The Get Videos API returned information for videos from multiple platforms but did not provide links which made it difficult to load videos.
 
 ## Credits
 
