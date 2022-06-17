@@ -20,7 +20,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BeI-zN-O1g" kind="relationship" relationship="viewControllers" id="KcK-0b-Uqb"/>
-                        <segue destination="ud5-CK-ilN" kind="relationship" relationship="viewControllers" id="8jU-gu-xez"/>
+                        <segue destination="Hun-Xs-GRW" kind="relationship" relationship="viewControllers" id="tOQ-lA-utP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-hJ-czs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -197,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qxx-YP-0eI">
-                                <rect key="frame" x="0.0" y="71" width="414" height="825"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a3H-3t-Ilm">
@@ -223,12 +223,13 @@
                                         <size key="customSize" width="123" height="187"/>
                                         <connections>
                                             <outlet property="movieGridCellPoster" destination="62a-TS-Omd" id="3K9-sr-bNp"/>
+                                            <segue destination="7ZV-bS-pNI" kind="show" id="pei-qV-vXs"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNU-I1-sqI">
-                                <rect key="frame" x="0.0" y="27" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -237,6 +238,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" image="projector_tabbar_item" id="CCU-Nc-SDE"/>
+                    <navigationItem key="navigationItem" title="Movies" id="gGA-bW-jXj"/>
                     <connections>
                         <outlet property="collectionView" destination="Qxx-YP-0eI" id="1J4-PM-wzD"/>
                         <outlet property="searchBar" destination="JNU-I1-sqI" id="p1Q-gS-fg4"/>
@@ -244,7 +246,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXc-bp-SWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-133.33333333333334" y="269.19642857142856"/>
+            <point key="canvasLocation" x="-723.1884057971015" y="268.52678571428572"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="ER7-Xp-wZh">
+            <objects>
+                <navigationController id="Hun-Xs-GRW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" image="projector_tabbar_item" id="G4Y-6g-oQP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qu4-oi-fyj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ud5-CK-ilN" kind="relationship" relationship="rootViewController" id="oL0-AB-j2G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLd-BO-eAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="269"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="KEp-mp-CFC">
@@ -262,6 +281,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBl-Zy-BzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="269"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="hxL-Jw-2Gj">
+            <objects>
+                <viewController id="7ZV-bS-pNI" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qEH-mI-jvn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ox-25-KW9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6e3-Yo-eNo">
+                                        <rect key="frame" x="0.0" y="-88" width="414" height="232"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTv-0u-due">
+                                        <rect key="frame" x="8" y="100" width="110" height="155"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="oYF-2X-kvH" appends="YES" id="Y0M-pQ-fe1"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48h-Lo-Pje">
+                                        <rect key="frame" x="126" y="152" width="280" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olS-ih-Fse">
+                                        <rect key="frame" x="8" y="263" width="398" height="454"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MgU-Eo-y9V"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Mtd-vZ-Hr2"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z3j-Q1-Q6t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ft9-Ff-jaJ"/>
+                    <connections>
+                        <outlet property="backdropView" destination="6e3-Yo-eNo" id="ZHc-zF-uql"/>
+                        <outlet property="movieTitle" destination="48h-Lo-Pje" id="55s-Gd-hT8"/>
+                        <outlet property="overview" destination="olS-ih-Fse" id="a9i-VE-Yl7"/>
+                        <outlet property="posterView" destination="nTv-0u-due" id="Io1-8B-RBw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wL7-ps-GFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oYF-2X-kvH">
+                    <connections>
+                        <action selector="posterTapped:" destination="7ZV-bS-pNI" id="3MN-P5-V82"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1535" y="269"/>
         </scene>
     </scenes>
     <resources>

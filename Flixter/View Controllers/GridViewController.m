@@ -8,6 +8,7 @@
 #import "GridViewController.h"
 #import "MovieGridCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface GridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -101,6 +102,19 @@
     self.filteredMovies = self.movies;
     [self.collectionView reloadData];
     [self.searchBar resignFirstResponder];
+}
+
+#pragma mark - Navigation
+
+// MODIFIES: detailsDict
+// EFFECTS: Passes movie data from sender (MovieCell) to DetailsViewController.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSIndexPath *myIndexPath = [self.collectionView indexPathForCell:sender];
+    
+    NSDictionary *dataToPass = self.movies[myIndexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.detailsDict = dataToPass;
 }
 
 @end
