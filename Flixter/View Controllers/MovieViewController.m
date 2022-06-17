@@ -103,7 +103,7 @@
 #pragma mark - Navigation
 
 // MODIFIES: detailsDict
-// EFFECTS: Passes movie data from sender (MovieCell) to DetailsViewController.
+// EFFECTS: Passes movie data from sender (MovieGridCell) to DetailsViewController.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     NSIndexPath *myIndexPath = [self.tableView indexPathForCell:sender];
