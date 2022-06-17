@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, strong) UIAlertController *alert;
+@property (strong, nonatomic) UIAlertController *alert;
 
 @end
 
@@ -93,6 +93,7 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
     
+    // configure fade in poster
     __weak MovieCell *weakSelf = cell;
     [cell.movieCellPosterView
         setImageWithURLRequest:request
@@ -107,12 +108,11 @@
                     weakSelf.movieCellPosterView.alpha = 1.0;
                 }];
             } else {
-                // update image
                 weakSelf.movieCellPosterView.image = image;
             }
         }
         failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
-            // TODO: set to default image
+            weakSelf.movieCellPosterView.image = [UIImage imageNamed:@"reel_tabbar_icon"];
     }];
     
     return cell;

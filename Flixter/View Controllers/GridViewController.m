@@ -74,6 +74,7 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
     
+    // configure fade in poster
     __weak MovieGridCell *weakSelf = cell;
     [cell.movieGridCellPoster
         setImageWithURLRequest:request
@@ -88,15 +89,12 @@
                     weakSelf.movieGridCellPoster.alpha = 1.0;
                 }];
             } else {
-                // update image
                 weakSelf.movieGridCellPoster.image = image;
             }
         }
         failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
-            // TODO: set to default image
+            weakSelf.movieGridCellPoster.image = [UIImage imageNamed:@"reel_tabbar_icon"];
     }];
-    
-    return cell;
     
     return cell;
 }
@@ -104,6 +102,7 @@
 // MODIFIES: filteredMovies
 // EFFECTS: Updates filteredMovies from movies according to the search bar data.
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
     if (searchText.length != 0) {
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
             NSString *title = evaluatedObject[@"original_title"];
@@ -113,19 +112,22 @@
     } else {
         self.filteredMovies = self.movies;
     }
+    
     [self.collectionView reloadData];
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    self.searchBar.showsCancelButton = YES;
-}
-
+// MODIFIES: filteredMovies, searchBar
+// EFFECTS: Resets filtered movies array and search bar.
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     self.searchBar.showsCancelButton = NO;
     self.searchBar.text = @"";
     self.filteredMovies = self.movies;
     [self.collectionView reloadData];
     [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
 }
 
 #pragma mark - Navigation
