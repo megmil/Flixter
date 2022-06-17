@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsr-7t-TDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.536231884058" y="269.19642857142856"/>
+            <point key="canvasLocation" x="2378" y="-921"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="YdZ-Tl-9Yb">
@@ -115,9 +115,6 @@
                                         <rect key="frame" x="8" y="100" width="110" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Suy-Md-g4L" appends="YES" id="jfW-8w-6hs"/>
-                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XO-5c-lzv">
                                         <rect key="frame" x="126" y="152" width="280" height="40"/>
@@ -150,43 +147,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Re-fE-O53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Suy-Md-g4L">
-                    <connections>
-                        <action selector="posterTapped:" destination="MCN-7C-ruo" id="tIU-cf-nvN"/>
-                        <segue destination="ssb-HD-Ipo" kind="presentation" id="iZB-5s-e4P"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2491" y="269"/>
-        </scene>
-        <!--Trailer View Controller-->
-        <scene sceneID="12r-3h-kXQ">
-            <objects>
-                <viewController id="ssb-HD-Ipo" customClass="TrailerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NTS-UG-NCA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOc-5b-aMW">
-                                <rect key="frame" x="67" y="343" width="280" height="157"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="GIZ-mM-N8q"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="WOc-5b-aMW" id="wuf-zP-IMw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XkG-GE-ESi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3300.0000000000005" y="268.52678571428572"/>
+            <point key="canvasLocation" x="3217" y="-921"/>
         </scene>
         <!--Movies-->
         <scene sceneID="run-9b-SMV">
@@ -246,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXc-bp-SWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-723.1884057971015" y="268.52678571428572"/>
+            <point key="canvasLocation" x="2377" y="-165"/>
         </scene>
         <!--Movies-->
         <scene sceneID="ER7-Xp-wZh">
@@ -263,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLd-BO-eAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="269"/>
+            <point key="canvasLocation" x="1574" y="-165"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="KEp-mp-CFC">
@@ -280,7 +242,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBl-Zy-BzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="269"/>
+            <point key="canvasLocation" x="1575" y="-921"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="hxL-Jw-2Gj">
@@ -343,7 +305,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1535" y="269"/>
+            <point key="canvasLocation" x="3216" y="-165"/>
         </scene>
     </scenes>
     <resources>

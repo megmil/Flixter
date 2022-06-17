@@ -43,10 +43,4 @@
     [self.posterView setImageWithURL:posterURL];
 }
 
-#pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TrailerViewController *trailerVC = [segue destinationViewController];
-    trailerVC.trailerDict = self.detailsDict;
-}
-
 @end

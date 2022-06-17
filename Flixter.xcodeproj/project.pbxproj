@@ -10,7 +10,6 @@
 		0466448B285A9CEB00BDF8CD /* MovieGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466448A285A9CEB00BDF8CD /* MovieGridCell.m */; };
 		0466448E285AA3DC00BDF8CD /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0466448D285AA3DC00BDF8CD /* GridViewController.m */; };
 		046644DB285C3BEE00BDF8CD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046644D9285C3BEE00BDF8CD /* SceneDelegate.m */; };
-		046644DE285CF0C500BDF8CD /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046644DD285CF0C500BDF8CD /* TrailerViewController.m */; };
 		046644E0285CF88500BDF8CD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046644DF285CF88500BDF8CD /* WebKit.framework */; };
 		0484726C285A566A00529561 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484726B285A566A00529561 /* MovieViewController.m */; };
 		04847271285A75F600529561 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04847270285A75F600529561 /* MovieCell.m */; };
@@ -52,8 +51,6 @@
 		0466448D285AA3DC00BDF8CD /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 		046644D9285C3BEE00BDF8CD /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneDelegate.m; path = ../../../../.Trash/SceneDelegate.m; sourceTree = "<group>"; };
 		046644DA285C3BEE00BDF8CD /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = ../../../../.Trash/SceneDelegate.h; sourceTree = "<group>"; };
-		046644DC285CF0C500BDF8CD /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
-		046644DD285CF0C500BDF8CD /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		046644DF285CF88500BDF8CD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0484726A285A566A00529561 /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		0484726B285A566A00529561 /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
@@ -132,8 +129,6 @@
 				04847273285A85F900529561 /* DetailsViewController.m */,
 				0466448C285AA3DC00BDF8CD /* GridViewController.h */,
 				0466448D285AA3DC00BDF8CD /* GridViewController.m */,
-				046644DC285CF0C500BDF8CD /* TrailerViewController.h */,
-				046644DD285CF0C500BDF8CD /* TrailerViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -474,7 +469,6 @@
 				04A72672285A4D7A0045CA7D /* AppDelegate.m in Sources */,
 				04847274285A85F900529561 /* DetailsViewController.m in Sources */,
 				0466448B285A9CEB00BDF8CD /* MovieGridCell.m in Sources */,
-				046644DE285CF0C500BDF8CD /* TrailerViewController.m in Sources */,
 				04A72683285A4D7B0045CA7D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
