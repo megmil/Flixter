@@ -7,7 +7,6 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
-#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 

@@ -72,7 +72,31 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     
-    [cell.movieGridCellPoster setImageWithURL:posterURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
+    
+    __weak MovieGridCell *weakSelf = cell;
+    [cell.movieGridCellPoster
+        setImageWithURLRequest:request
+        placeholderImage:nil
+        success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+                                        
+            if (imageResponse) {
+                // fade in image
+                weakSelf.movieGridCellPoster.alpha = 0.0;
+                weakSelf.movieGridCellPoster.image = image;
+                [UIView animateWithDuration:0.5 animations:^{
+                    weakSelf.movieGridCellPoster.alpha = 1.0;
+                }];
+            } else {
+                // update image
+                weakSelf.movieGridCellPoster.image = image;
+            }
+        }
+        failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+            // TODO: set to default image
+    }];
+    
+    return cell;
     
     return cell;
 }

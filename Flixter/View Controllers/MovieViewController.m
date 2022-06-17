@@ -12,9 +12,9 @@
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *movies;
+@property (strong, nonatomic) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UIAlertController *alert;
 
@@ -77,10 +77,6 @@
     [task resume];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
-}
-
 // EFFECTS: Returns the reusable MovieCell with the title, overview, and poster view for row at index path.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -95,9 +91,35 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [cell.movieCellPosterView setImageWithURL:posterURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
+    
+    __weak MovieCell *weakSelf = cell;
+    [cell.movieCellPosterView
+        setImageWithURLRequest:request
+        placeholderImage:nil
+        success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+                                        
+            if (imageResponse) {
+                // fade in image
+                weakSelf.movieCellPosterView.alpha = 0.0;
+                weakSelf.movieCellPosterView.image = image;
+                [UIView animateWithDuration:0.5 animations:^{
+                    weakSelf.movieCellPosterView.alpha = 1.0;
+                }];
+            } else {
+                // update image
+                weakSelf.movieCellPosterView.image = image;
+            }
+        }
+        failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+            // TODO: set to default image
+    }];
     
     return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.movies.count;
 }
 
 #pragma mark - Navigation
