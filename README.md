@@ -44,8 +44,6 @@ Here's a walkthrough of implemented user stories:
 <img src='https://imgur.com/1Vx4bXE' title='Video Walkthrough 1' width='' alt='Video Walkthrough' />
 <img src='https://imgur.com/p0UiMOj' title='Video Walkthrough 2' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap](https://getkap.co/).
-
 ## Notes
 
 Describe any challenges encountered while building the app.
